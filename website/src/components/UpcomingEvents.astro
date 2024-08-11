@@ -1,0 +1,46 @@
+---
+import UEventEntry from './UEventEntry.astro'
+---
+
+<div
+  id='uevents'
+  class='uevents-wrapper py-10 px-20 flex flex-col items-center h-fit bg-violet-400'
+>
+  <div class='font-oswald text-center text-6xl text-violet-800 font-bold w-fit'>
+    UPCOMING EVENTS
+  </div>
+  <div class='flex flex-row items-center pt-4'>
+    <img src='/public/choir-vector.svg' />
+    <div class='flex flex-col justify-center'>
+      <UEventEntry
+        mdate='21'
+        month='SEP'
+        fullDate='21 September 2024'
+        day='Saturday'
+        title="Parkinson's UK"
+        time='2pm'
+        address='Cleveleys Park Methodist church (Stockdale Way entrance), Cleveleys FY5 2BL'
+      />
+      <UEventEntry
+        mdate='28'
+        month='SEP'
+        fullDate='28 September 2024'
+        day='Saturday'
+        title='RNLI (200th Anniversary)'
+        time='7:30pm'
+        address='St Mary’s RC Church, 34 Kemp Street, Fleetwood FY7 6JX'
+      />
+      <UEventEntry
+        mdate='25'
+        month='OCT'
+        fullDate='25 October 2024'
+        day='Saturday'
+        title='RNLI (200th Anniversary)'
+        time='7pm'
+        address='St Anne’sParish Church, 11 Headroomgate Rd, Lytham Saint Annes FY8 3BA'
+      />
+    </div>
+  </div>
+</div>
+
+<style></style>

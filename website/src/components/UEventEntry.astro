@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components'
+const { title, mdate, month, fullDate, day, time, address } = Astro.props
+---
+
+<div class='uentry-wrapper flex flex-row pb-4'>
+  <div class='bg-violet-600 w-3'></div>
+  <div
+    class='flex flex-col items-center text-violet-600 px-6 bg-slate-300 justify-center'
+  >
+    <div class='text-5xl font-oswald font-bold pb-2'>{mdate}</div>
+    <div class='text-2xl font-oswald font-bold'>{month}</div>
+  </div>
+  <div
+    class='flex flex-col p-1 w-[510px] bg-slate-300 rounded-tr-md rounded-br-md'
+  >
+    <div class='text-sm text-violet-700 font-oswald font-medium'>
+      IN SUPPORT OF
+    </div>
+    <div class='text-4xl text-violet-600 font-oswald font-bold pb-1'>
+      {title}
+    </div>
+    <div class='flex flex-row items-center text-violet-600'>
+      <div class='flex justify-center items-center w-fit h-fit'>
+        <Icon class='text-xl' name='calender' />
+      </div>
+      <div class='pl-2 font-mohave font-medium text-md text-center w-fit h-fit'>
+        {day} - {fullDate} @ {time}
+      </div>
+    </div>
+    <div class='flex flex-row items-center text-violet-600'>
+      <div class='flex justify-center items-center w-fit h-fit'>
+        <Icon class='text-xl' name='location' />
+      </div>
+      <div class='pl-2 font-mohave font-medium text-md text-center w-fit h-fit'>
+        {address}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<style>
+  [data-icon='calender'] {
+    font-size: 1rem;
+    color: purple;
+  }
+</style> -->
