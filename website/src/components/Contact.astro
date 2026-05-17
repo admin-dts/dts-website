@@ -1,50 +1,59 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
 <div
   id='contact'
-  class='py-10 px-20 flex flex-col items-center h-fit bg-violet-300'
+  class='py-16 px-6 flex flex-col items-center h-fit bg-violet-300'
 >
-  <div class='font-oswald text-center text-6xl text-violet-800 font-bold w-fit'>
+  <div class='font-oswald text-center max-[640px]:text-4xl text-6xl text-violet-800 font-bold mb-12'>
     CONTACT US
   </div>
 
-  <div class='flex flex-row max-[1000px]:flex-col-reverse items-center pt-4'>
-    <div class='flex flex-col justify-center max-[1000px]:my-10'>
-      <div class='font-mohave font-bold text-violet-700 text-6xl'>
-        Email us at
+  <img src='contact.png' class='mb-10 max-w-lg max-[640px]:max-w-full w-full' />
+
+  <div class='grid max-[800px]:grid-cols-1 grid-cols-3 gap-6 w-full max-w-5xl'>
+
+    <div class='bg-violet-700 rounded-2xl p-8 flex flex-col items-center text-center'>
+      <Icon class='text-5xl text-white mb-3' name='email' />
+      <div class='font-oswald font-bold text-white text-2xl mb-4 tracking-wide'>
+        EMAIL
       </div>
       <a href='mailto:dreamteamsingers@gmail.com'>
-        <div class='font-mohave font-medium text-violet-700 text-3xl'>
+        <div class='font-mohave text-violet-100 text-xl hover:text-white transition-colors break-all'>
           dreamteamsingers@gmail.com
         </div>
       </a>
-      <div class='py-6 font-mohave text-violet-700 text-4xl'>
-        Or
-      </div>
-      <div class='font-mohave font-bold text-violet-700 text-6xl'>Phone us on</div>
-      <div class='font-mohave text-2xl'>
-        <span class='text-violet-700 font-medium'>07933155590 (Carol Warmisham)</span>
-        <br />
-	<span class='text-violet-700'>
-		Preferably between 7pm - 9pm
-        </span><br />
-      </div>
+    </div>
 
-      <div class='py-6 font-mohave text-violet-700 text-4xl'>
-        Or turn up to our
+    <div class='bg-violet-700 rounded-2xl p-8 flex flex-col items-center text-center'>
+      <Icon class='text-5xl text-white mb-3' name='phone' />
+      <div class='font-oswald font-bold text-white text-2xl mb-4 tracking-wide'>
+        PHONE
       </div>
-      <div class='font-mohave font-bold text-violet-700 text-6xl'>Meetings</div>
-      <div class='font-mohave text-2xl'>
-        <span class='text-violet-700 font-bold'>Every Thursday</span>
-        <br />
-        <span class='text-violet-700 font-medium'>7:00pm to 9:00pm </span>
-        <br />
-        <span class='text-violet-700'>
-          Cleveleys Park Methodist Church, West Drive, <br />
-          Cleveleys. FY5 2BL <br /> (use Stockdove Way entrance)
-        </span><br />
+      <a href='tel:07933155590'>
+        <div class='font-mohave font-bold text-violet-100 text-2xl hover:text-white transition-colors'>
+          07933155590
+        </div>
+      </a>
+      <div class='font-mohave text-violet-200 text-xl mt-1'>Carol Warmisham</div>
+      <div class='font-mohave text-violet-200 text-lg mt-3'>Preferably between 7pm – 9pm</div>
+    </div>
+
+    <div class='bg-violet-700 rounded-2xl p-8 flex flex-col items-center text-center'>
+      <Icon class='text-5xl text-white mb-3' name='people' />
+      <div class='font-oswald font-bold text-white text-2xl mb-4 tracking-wide'>
+        MEETINGS
+      </div>
+      <div class='font-mohave font-bold text-violet-100 text-2xl'>Every Thursday</div>
+      <div class='font-mohave text-violet-100 text-xl'>7:00pm – 9:00pm</div>
+      <div class='font-mohave text-violet-200 text-lg mt-3 leading-relaxed'>
+        Cleveleys Park Methodist Church,<br />
+        West Drive, Cleveleys FY5 2BL<br />
+        (Stockdove Way entrance)
       </div>
     </div>
-    <img src='contact.png' />
-  </div>
-</div>
 
-<style></style>
+  </div>
+
+</div>

@@ -1,40 +1,114 @@
 <div
   id='top'
-  class='nav-wrapper flex max-[730px]:flex-col max-[730px]:items-center justify-between p-4 bg-violet-400'
+  class='nav-wrapper sticky top-0 z-50 bg-violet-900 shadow-lg border-b border-violet-700'
 >
-  <div class='logo-wrapper w-14 h-14 flex justify-center items-center'>
-    <img src='dts-logo-white.png' />
-  </div>
-  <div
-    class='link-wrapper flex flex-row max-[650px]:flex-col max-[650px]:space-y-2 min-[650px]:space-x-12 font-mohave text-xl items-center'
-  >
-    <a href='#top'
-      ><div
-        class='nav-item px-4 py-0.5 rounded-md hover:bg-violet-600 cursor-pointer'
-      >
+  <div class='flex items-center justify-between px-6 py-3'>
+
+    <a href='#top' class='flex items-center gap-3'>
+      <img src='dts-logo-white.png' class='w-12 h-12 object-contain' />
+      <span class='font-oswald text-violet-200 text-xl font-semibold tracking-widest uppercase'>
+        Dream Team Singers
+      </span>
+    </a>
+
+    <button
+      id='hamburger'
+      aria-label='Toggle menu'
+      class='min-[700px]:hidden flex flex-col justify-center items-center gap-1.5 p-2'
+    >
+      <span class='hamburger-bar block w-6 h-0.5 bg-violet-200 transition-all duration-300'></span>
+      <span class='hamburger-bar block w-6 h-0.5 bg-violet-200 transition-all duration-300'></span>
+      <span class='hamburger-bar block w-6 h-0.5 bg-violet-200 transition-all duration-300'></span>
+    </button>
+
+    <nav id='nav-links' class='max-[700px]:hidden min-[700px]:flex flex-row gap-1'>
+      <a href='#top' class='nav-link font-mohave text-lg text-violet-100 px-4 py-1 hover:text-white transition-colors relative'>
         Home
-      </div></a
-    >
-    <a href='#who-we-are'
-      ><div
-        class='nav-item px-4 py-0.5 rounded-md hover:bg-violet-600 cursor-pointer'
-      >
+      </a>
+      <a href='#who-we-are' class='nav-link font-mohave text-lg text-violet-100 px-4 py-1 hover:text-white transition-colors relative'>
         About Us
-      </div></a
-    >
-    <a href='#uevents'>
-      <div
-        class='nav-item px-4 py-0.5 rounded-md hover:bg-violet-600 cursor-pointer'
-      >
+      </a>
+      <a href='#uevents' class='nav-link font-mohave text-lg text-violet-100 px-4 py-1 hover:text-white transition-colors relative'>
         Upcoming Events
-      </div>
-    </a>
-    <a href='#contact'>
-      <div
-        class='nav-item px-4 py-0.5 rounded-md hover:bg-violet-600 cursor-pointer'
-      >
+      </a>
+      <a href='#contact' class='nav-link font-mohave text-lg text-violet-100 px-4 py-1 hover:text-white transition-colors relative'>
         Contact Us
-      </div>
-    </a>
+      </a>
+    </nav>
+
   </div>
+
+  <nav
+    id='mobile-menu'
+    class='hidden flex-col bg-violet-800 px-6 py-4 gap-3 min-[700px]:hidden'
+  >
+    <a href='#top' class='mobile-link font-mohave text-xl text-violet-100 hover:text-white transition-colors py-1 border-b border-violet-700'>
+      Home
+    </a>
+    <a href='#who-we-are' class='mobile-link font-mohave text-xl text-violet-100 hover:text-white transition-colors py-1 border-b border-violet-700'>
+      About Us
+    </a>
+    <a href='#uevents' class='mobile-link font-mohave text-xl text-violet-100 hover:text-white transition-colors py-1 border-b border-violet-700'>
+      Upcoming Events
+    </a>
+    <a href='#contact' class='mobile-link font-mohave text-xl text-violet-100 hover:text-white transition-colors py-1'>
+      Contact Us
+    </a>
+  </nav>
 </div>
+
+<script>
+  const hamburger = document.getElementById('hamburger')
+  const mobileMenu = document.getElementById('mobile-menu')
+  const bars = hamburger?.querySelectorAll('.hamburger-bar')
+
+  let open = false
+
+  hamburger?.addEventListener('click', () => {
+    open = !open
+    mobileMenu?.classList.toggle('hidden', !open)
+    mobileMenu?.classList.toggle('flex', open)
+
+    if (bars) {
+      if (open) {
+        (bars[0] as HTMLElement).style.transform = 'translateY(8px) rotate(45deg)'
+        ;(bars[1] as HTMLElement).style.opacity = '0'
+        ;(bars[2] as HTMLElement).style.transform = 'translateY(-8px) rotate(-45deg)'
+      } else {
+        ;(bars[0] as HTMLElement).style.transform = ''
+        ;(bars[1] as HTMLElement).style.opacity = ''
+        ;(bars[2] as HTMLElement).style.transform = ''
+      }
+    }
+  })
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      open = false
+      mobileMenu?.classList.add('hidden')
+      mobileMenu?.classList.remove('flex')
+      if (bars) {
+        ;(bars[0] as HTMLElement).style.transform = ''
+        ;(bars[1] as HTMLElement).style.opacity = ''
+        ;(bars[2] as HTMLElement).style.transform = ''
+      }
+    })
+  })
+</script>
+
+<style>
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: #a78bfa;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+</style>
