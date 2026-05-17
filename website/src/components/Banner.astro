@@ -1,14 +1,38 @@
 <div
   id='banner'
-  class="banner-wrapper min-h-[420px] h-fit bg-no-repeat bg-cover bg-center bg-[url('/public/dts-banner.jpg')]"
+  class="banner-wrapper min-h-[90vh] h-fit bg-no-repeat bg-cover bg-center bg-[url('/public/dts-banner.jpg')]"
 >
-  <div class='banner-grad flex flex-col items-center justify-center min-h-[420px] p-4 w-full'>
-    <div
-      class='font-oswald text-center max-[640px]:text-5xl text-7xl text-violet-300 font-bold w-fit'
-    >
-      HOME OF THE
+  <div class='banner-grad flex flex-col items-center justify-center min-h-[90vh] px-6 py-16 w-full gap-6'>
+
+    <div class='font-oswald text-center max-[640px]:text-5xl text-8xl text-violet-300 font-light tracking-[0.3em] uppercase'>
+      Home of the
     </div>
-    <img class='pt-10 w-full max-w-[600px] px-4' src='dts-logo-white.png' />
+
+    <img class='w-full max-w-[560px] max-[640px]:max-w-[300px] px-4' src='dts-logo-white.png' />
+
+    <p class='font-mohave text-center max-[640px]:text-xl text-2xl text-violet-200 max-w-xl tracking-wide mt-2'>
+      A choir uniting people through song — raising funds for charity, one performance at a time.
+    </p>
+
+    <div class='flex max-[500px]:flex-col gap-4 mt-4'>
+      <a href='#uevents'>
+        <div class='font-oswald text-lg tracking-widest px-8 py-3 bg-violet-600 hover:bg-violet-500 text-white rounded-full transition-colors cursor-pointer'>
+          UPCOMING EVENTS
+        </div>
+      </a>
+      <a href='#contact'>
+        <div class='font-oswald text-lg tracking-widest px-8 py-3 border-2 border-violet-400 hover:bg-violet-800 text-violet-200 rounded-full transition-colors cursor-pointer'>
+          CONTACT US
+        </div>
+      </a>
+    </div>
+
+    <a href='#who-we-are' class='mt-8 text-violet-400 hover:text-violet-200 transition-colors animate-bounce'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+        <path d='M6 9l6 6 6-6'/>
+      </svg>
+    </a>
+
   </div>
 </div>
 
@@ -17,8 +41,8 @@
     background: rgb(86, 68, 112);
     background: radial-gradient(
       circle,
-      rgba(86, 68, 112, 0.65) 0%,
-      rgba(14, 4, 41, 0.9) 84%
+      rgba(86, 68, 112, 0.55) 0%,
+      rgba(14, 4, 41, 0.92) 84%
     );
   }
 </style>
