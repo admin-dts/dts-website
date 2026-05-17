@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-const { header, title, fullDate, day, time, address } = Astro.props
+const { header, title, concertWith, fullDate, day, time, address } = Astro.props
 ---
 
 <div class='uentry-wrapper flex flex-row pb-4'>
@@ -9,13 +9,21 @@ const { header, title, fullDate, day, time, address } = Astro.props
     class='flex flex-col grow py-2 px-4 min-w-[200px] max-w-[510px] bg-slate-300 rounded-tr-md rounded-br-md'
   >
     <div class='text-lg text-violet-700 font-oswald font-medium text-center'>
-	{header}
+      {header}
     </div>
     <div
       class='text-4xl text-violet-600 font-oswald font-bold pb-1 text-center'
     >
       {title}
     </div>
+    {concertWith && (
+      <div class='text-lg text-violet-700 font-oswald font-medium text-center mt-1'>
+        IN CONCERT WITH
+      </div>
+      <div class='text-3xl text-violet-600 font-oswald font-bold pb-1 text-center'>
+        {concertWith}
+      </div>
+    )}
     <div class='flex flex-row text-violet-600 py-1'>
       <div class='flex justify-center w-fit h-fit'>
         <Icon class='text-3xl' name='calender' />
