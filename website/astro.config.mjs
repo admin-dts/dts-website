@@ -3,7 +3,6 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
-import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +10,4 @@ export default defineConfig({
   integrations: [react({
     // experimentalReactChildren: true,
   }), tailwind(), icon(), sitemap()],
-  output: "server",
-  adapter: netlify(),
 });
