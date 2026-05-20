@@ -4,27 +4,27 @@ const { header, title, concertWith, fullDate, day, time, address } = Astro.props
 ---
 
 <div class='uentry-wrapper flex flex-row pb-4'>
-  <div class='bg-violet-600 w-4'></div>
+  <div class='bg-[#ff4d6d] w-4'></div>
   <div
-    class='flex flex-col grow py-2 px-4 w-full max-w-[510px] bg-violet-100 rounded-tr-md rounded-br-md'
+    class='flex flex-col grow py-2 px-4 w-full max-w-[510px] bg-[#fff0f3] rounded-tr-md rounded-br-md'
   >
-    <div class='text-lg text-violet-700 font-oswald font-medium text-center'>
+    <div class='text-lg text-[#c9184a] font-oswald font-medium text-center'>
       {header}
     </div>
     <div
-      class='text-4xl text-violet-600 font-oswald font-bold pb-1 text-center'
+      class='text-4xl text-[#800f2f] font-oswald font-bold pb-1 text-center'
     >
       {title}
     </div>
     {concertWith && (
-      <div class='text-lg text-violet-700 font-oswald font-medium text-center mt-1'>
+      <div class='text-lg text-[#c9184a] font-oswald font-medium text-center mt-1'>
         IN CONCERT WITH
       </div>
-      <div class='text-3xl text-violet-600 font-oswald font-bold pb-1 text-center'>
+      <div class='text-3xl text-[#800f2f] font-oswald font-bold pb-1 text-center'>
         {concertWith}
       </div>
     )}
-    <div class='flex flex-row text-violet-600 py-1'>
+    <div class='flex flex-row text-[#c9184a] py-1'>
       <div class='flex justify-center w-fit h-fit'>
         <Icon class='text-3xl' name='calender' />
       </div>
@@ -32,7 +32,7 @@ const { header, title, concertWith, fullDate, day, time, address } = Astro.props
         {day} - {fullDate} @ {time}
       </div>
     </div>
-    <div class='flex flex-row text-violet-800'>
+    <div class='flex flex-row text-[#a4133c]'>
       <div class='flex justify-center w-fit h-fit'>
         <Icon class='text-3xl' name='location' />
       </div>
@@ -42,10 +42,3 @@ const { header, title, concertWith, fullDate, day, time, address } = Astro.props
     </div>
   </div>
 </div>
-<!-- 
-<style>
-  [data-icon='calender'] {
-    font-size: 1rem;
-    color: purple;
-  }
-</style> -->
