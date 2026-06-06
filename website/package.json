@@ -6,8 +6,10 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "npm run build && wrangler dev",
+    "astro": "astro",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "overrides": {
     "astro-icon": {
@@ -16,6 +18,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.8.1",
+    "@astrojs/cloudflare": "11",
     "@astrojs/netlify": "^5.5.1",
     "@astrojs/react": "^3.6.0",
     "@astrojs/sitemap": "3.6.0",
@@ -27,5 +30,8 @@
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "wrangler": "^4.98.0"
   }
 }
